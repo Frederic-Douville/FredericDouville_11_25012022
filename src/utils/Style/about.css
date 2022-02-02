@@ -1,0 +1,26 @@
+.about-ctn {
+    width: 70%;
+    margin: auto;
+}
+
+.collapse-about-ctn {
+    width: 80%;
+    margin: auto;
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+@media screen and (max-width: 991px) {
+    .about-ctn {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .collapse-about-ctn {
+        width: 100%;
+    }
+}

@@ -1,0 +1,24 @@
+.footer-ctn {
+    width: 100%;
+    height: 209px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 24px;
+    font-style: normal;
+}
+
+.logo-footer {
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+@media screen and (max-width: 768px) {
+    .footer-ctn {
+        font-size: 14px;
+    }
+}

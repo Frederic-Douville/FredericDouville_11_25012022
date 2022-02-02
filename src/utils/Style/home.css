@@ -1,0 +1,28 @@
+.home-ctn {
+    width: 70%;
+    margin: auto;
+}
+
+.home-card-ctn {
+    width: 100%;
+    margin-top: 2em;
+    background-color: #f7f7f7;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 991px) {
+    .home-ctn {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .home-card-ctn {
+        background-color: #ffffff;
+    }
+}

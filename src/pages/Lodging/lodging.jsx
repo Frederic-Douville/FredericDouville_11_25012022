@@ -1,47 +1,64 @@
-import CollapseList from '../../components/Collapse/collapseList'
-import CollapseDesc from '../../components/Collapse/collapseDesc'
-
-const objectDesc = {
-  title: 'Description',
-  description:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-}
-const objectList = [
-  'objet #1',
-  'objet #2',
-  'objet #3',
-  'objet #4',
-  'objet #5',
-  'objet #6',
-]
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { Collapse } from '../../components';
+import '../../utils/Style/lodging.css';
 
 function Lodging() {
-  return (
-    <div>
-      <div>
-        <p>Futur carroussel de photos</p>
-      </div>
-      <div>
-        <div>
-          <h1>Titre du logement</h1>
-          <p>Ville, Régions</p>
-          <p>container de tag</p>
+    const { id } = useParams();
+    const [oneLodgingData, setOneLodgingData] = React.useState([]);
+
+    useEffect(() => {
+        fetch(
+            'https://raw.githubusercontent.com/Frederic-Douville/FredericDouville_11_25012022/main/src/data/logements.json'
+        ).then((response) =>
+            response
+                .json()
+                .then((data) =>
+                    data.map((item) =>
+                        item.id === id ? setOneLodgingData(item) : null
+                    )
+                )
+                .catch((error) => console.log(error))
+        );
+    }, []);
+
+    const location = oneLodgingData.location;
+    //split n'est pas accepté par react
+    //const region = location.split('-')[0];
+    //const city = location.split('-')[1];
+    const host = oneLodgingData.host;
+
+    return (
+        <div className="lodging-ctn">
+            <div>
+                <p>Futur carroussel de photos</p>
+            </div>
+            <div>
+                <div>
+                    <h1>{oneLodgingData.title}</h1>
+                    <p>{oneLodgingData.location}</p>
+                    <div></div>
+                </div>
+                <div>
+                    <p>Notation</p>
+                    <p>nom</p>
+                    <p>image</p>
+                </div>
+            </div>
+            <div className="lodging-collapse-ctn">
+                <Collapse
+                    isLodging
+                    content={oneLodgingData.description}
+                    title="Description"
+                />
+                <Collapse
+                    isList
+                    isLodging
+                    content={oneLodgingData.equipments}
+                />
+            </div>
         </div>
-        <div>
-          <p>Notation</p>
-          <p>Nom Prénom</p>
-          <p>image</p>
-        </div>
-      </div>
-      <div>
-        <CollapseDesc
-          title={objectDesc.title}
-          description={objectDesc.description}
-        />
-        <CollapseList array={objectList} />
-      </div>
-    </div>
-  )
+    );
 }
 
-export default Lodging
+export default Lodging;

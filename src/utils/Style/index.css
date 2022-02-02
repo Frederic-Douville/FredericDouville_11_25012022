@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url(./Typography/static/Montserrat-Regular.ttf) format('truetype');
+}
+
+body {
+    font-family: 'Montserrat';
+    margin: auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#root {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

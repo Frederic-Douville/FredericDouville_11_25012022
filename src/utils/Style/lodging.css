@@ -1,0 +1,29 @@
+.lodging-ctn {
+    margin: auto;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.lodging-collapse-ctn {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+@media screen and (max-width: 991px) {
+    .lodging-ctn {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .lodging-collapse-ctn {
+        flex-direction: column;
+        align-items: center;
+    }
+}
