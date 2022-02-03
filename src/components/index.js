@@ -4,3 +4,6 @@ export { default as Collapse } from './Collapse/collapse';
 export { default as Error } from './Error/error';
 export { default as Footer } from './Footer/footer';
 export { default as Header } from './Header/header';
+export { default as Notation } from './Notation/notation';
+export { default as Tag } from './Tag/tag';
+export { default as Carousel } from './Carousel/carousel';

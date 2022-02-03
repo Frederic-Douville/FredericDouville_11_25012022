@@ -1,0 +1,23 @@
+.tag-ctn {
+    color: #ffffff;
+    background-color: #ff6060;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    min-width: 115px;
+    padding: 0 1.5em 0 1.5em;
+    height: 25px;
+}
+
+@media screen and (max-width: 768px) {
+    .tag-ctn {
+        font-size: 10px;
+        min-width: 84px;
+        height: 18px;
+    }
+}

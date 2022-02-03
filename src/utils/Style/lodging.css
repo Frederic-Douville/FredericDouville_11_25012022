@@ -1,10 +1,67 @@
 .lodging-ctn {
-    margin: auto;
+    margin: 0 0 1em 0;
     width: 70%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: #ff6060;
+}
+
+.lodging-info-ctn {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    margin: 2em 0 2em 0;
+}
+
+.lodging-title-ctn h1 {
+    font-size: 36px;
+    font-weight: 500;
+    font-style: normal;
+    margin: 0;
+}
+
+.lodging-title-ctn p {
+    font-size: 18px;
+    font-weight: 500;
+    font-style: normal;
+    margin-top: 0.5em;
+}
+
+.lodging-tag-ctn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.lodging-profil-notation-ctn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.lodging-profil-ctn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.lodging-profil-ctn img {
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+}
+
+.lodging-name-ctn p {
+    font-size: 18px;
+    text-align: end;
+    margin: 0.5em;
 }
 
 .lodging-collapse-ctn {
@@ -22,6 +79,13 @@
 }
 
 @media screen and (max-width: 768px) {
+    .lodging-info-ctn {
+        flex-direction: column;
+    }
+    .lodging-profil-notation-ctn {
+        flex-direction: row-reverse;
+        align-items: center;
+    }
     .lodging-collapse-ctn {
         flex-direction: column;
         align-items: center;

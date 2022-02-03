@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Collapse } from '../../components';
+import { Collapse, Carousel, Tag, Notation } from '../../components';
 import '../../utils/Style/lodging.css';
 
 function Lodging() {
@@ -9,7 +9,7 @@ function Lodging() {
 
     useEffect(() => {
         fetch(
-            'https://raw.githubusercontent.com/Frederic-Douville/FredericDouville_11_25012022/main/src/data/logements.json'
+            'https://raw.githubusercontent.com/Frederic-Douville/FredericDouville_11_25012022/main/src/data/lodgings.json'
         ).then((response) =>
             response
                 .json()
@@ -23,26 +23,42 @@ function Lodging() {
     }, []);
 
     const location = oneLodgingData.location;
-    //split n'est pas accepté par react
-    //const region = location.split('-')[0];
-    //const city = location.split('-')[1];
+    const region = location?.split('-')[0];
+    const city = location?.split('-')[1];
+
+    const tagArray = oneLodgingData.tags;
+
     const host = oneLodgingData.host;
+    const firstName = host?.name.split(' ')[0];
+    const lastName = host?.name.split(' ')[1];
+    const hostPicture = host?.picture;
+
+    const rating = oneLodgingData.rating;
 
     return (
         <div className="lodging-ctn">
-            <div>
-                <p>Futur carroussel de photos</p>
-            </div>
-            <div>
-                <div>
+            <div>{/* <Carousel /> */}</div>
+            <div className="lodging-info-ctn">
+                <div className="lodging-title-ctn">
                     <h1>{oneLodgingData.title}</h1>
-                    <p>{oneLodgingData.location}</p>
-                    <div></div>
+                    <p>
+                        {city}, {region}
+                    </p>
+                    <div className="lodging-tag-ctn">
+                        {React.Children.toArray(tagArray)?.map((item) => (
+                            <Tag content={item} key={item.id} />
+                        ))}
+                    </div>
                 </div>
-                <div>
-                    <p>Notation</p>
-                    <p>nom</p>
-                    <p>image</p>
+                <div className="lodging-profil-notation-ctn">
+                    <div className="lodging-profil-ctn">
+                        <div className="lodging-name-ctn">
+                            <p>{firstName}</p>
+                            <p>{lastName}</p>
+                        </div>
+                        <img src={hostPicture} alt="portrait de l'hôte" />
+                    </div>
+                    <Notation starTotal={rating} />
                 </div>
             </div>
             <div className="lodging-collapse-ctn">

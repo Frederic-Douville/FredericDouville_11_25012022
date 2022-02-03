@@ -17,7 +17,7 @@ function Home() {
 
     useEffect(() => {
         fetch(
-            'https://raw.githubusercontent.com/Frederic-Douville/FredericDouville_11_25012022/main/src/data/logements.json'
+            'https://raw.githubusercontent.com/Frederic-Douville/FredericDouville_11_25012022/main/src/data/lodgings.json'
         ).then((response) =>
             response
                 .json()
@@ -26,13 +26,17 @@ function Home() {
         );
     }, []);
 
-    console.log(lodgingData);
     return (
         <div className="home-ctn">
             <Banner isHome />
             <div className="home-card-ctn">
                 {lodgingData.map((item) => (
-                    <Card key={item.id} title={item.title} id={item.id} />
+                    <Card
+                        key={item.id}
+                        title={item.title}
+                        id={item.id}
+                        cover={item.cover}
+                    />
                 ))}
             </div>
         </div>
