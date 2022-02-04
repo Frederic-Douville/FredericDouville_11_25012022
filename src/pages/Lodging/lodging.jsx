@@ -22,6 +22,8 @@ function Lodging() {
         );
     }, []);
 
+    const pictureArray = oneLodgingData.pictures;
+
     const location = oneLodgingData.location;
     const region = location?.split('-')[0];
     const city = location?.split('-')[1];
@@ -37,7 +39,7 @@ function Lodging() {
 
     return (
         <div className="lodging-ctn">
-            <div>{/* <Carousel /> */}</div>
+            <Carousel array={pictureArray} />
             <div className="lodging-info-ctn">
                 <div className="lodging-title-ctn">
                     <h1>{oneLodgingData.title}</h1>

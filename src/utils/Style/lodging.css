@@ -35,6 +35,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
     gap: 10px;
 }
 
@@ -81,13 +82,31 @@
 @media screen and (max-width: 768px) {
     .lodging-info-ctn {
         flex-direction: column;
+        margin: 0.5em 0 0.5em 0;
     }
+    .lodging-title-ctn h1 {
+        font-size: 20px;
+    }
+    .lodging-title-ctn p {
+        font-size: 14px;
+    }
+
     .lodging-profil-notation-ctn {
         flex-direction: row-reverse;
         align-items: center;
+        margin-top: 1em;
+    }
+    .lodging-name-ctn p {
+        font-size: 14px;
+        margin: 0.2em 0.5em 0.2em 0.5em;
+    }
+    .lodging-profil-ctn img {
+        width: 40px;
+        height: 40px;
     }
     .lodging-collapse-ctn {
         flex-direction: column;
         align-items: center;
+        gap: 1em;
     }
 }

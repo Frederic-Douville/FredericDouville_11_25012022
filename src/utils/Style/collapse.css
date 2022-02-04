@@ -23,7 +23,7 @@
 .collapse-title-ctn button {
     border-style: none;
     cursor: pointer;
-    background-color: #ff6060;
+    background: none;
     margin-right: 1em;
 }
 
@@ -67,8 +67,14 @@
 }
 
 @media screen and (max-width: 768px) {
+    .collapse-ctn {
+        margin: 0.5em 0 0.5em 0;
+    }
     .collapse-ctn-lodging {
         width: 100%;
+    }
+    .collapse-title-ctn {
+        height: 30px;
     }
     .collapse-title-ctn button img {
         width: 18px;

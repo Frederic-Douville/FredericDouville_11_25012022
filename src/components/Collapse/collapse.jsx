@@ -1,6 +1,6 @@
 import React from 'react';
-import ChevronBas from '../../assets/Chevron_bas.svg';
-import ChevronHaut from '../../assets/Chevron_haut.svg';
+import ChevronDown from '../../assets/Chevron_bas.svg';
+import ChevronUp from '../../assets/Chevron_haut.svg';
 import '../../utils/Style/collapse.css';
 
 function Collapse({ content, title, isList, isLodging }) {
@@ -18,9 +18,9 @@ function Collapse({ content, title, isList, isLodging }) {
                 </span>
                 <button onClick={handleIsOpen}>
                     {isOpen ? (
-                        <img src={ChevronHaut} alt="chevron haut" />
+                        <img src={ChevronUp} alt="chevron haut" />
                     ) : (
-                        <img src={ChevronBas} alt="chevron bas" />
+                        <img src={ChevronDown} alt="chevron bas" />
                     )}
                 </button>
             </div>

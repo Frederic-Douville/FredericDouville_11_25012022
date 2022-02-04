@@ -3,6 +3,11 @@
     src: url(./Typography/static/Montserrat-Regular.ttf) format('truetype');
 }
 
+@font-face {
+    font-family: 'Monserrat-bold';
+    src: url(./Typography/static/Montserrat-Bold.ttf) format('truetype');
+}
+
 body {
     font-family: 'Montserrat';
     margin: auto;
