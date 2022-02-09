@@ -1,44 +1,44 @@
-import React, { useEffect, useState } from 'react';
 import { Card, Banner } from '../../components';
+import { useFetch } from '../../utils/Hook';
 import '../../utils/Style/home.css';
-import '../../data/lodgings.json';
-
-const cardArray = [
-    'Titre de la location #1',
-    'Titre de la location #2',
-    'Titre de la location #3',
-    'Titre de la location #4',
-    'Titre de la location #5',
-    'Titre de la location #6',
-];
+import '../../utils/Style/loader.css';
+import '../../utils/Style/error.css';
 
 function Home() {
-    const [lodgingData, setLodgingData] = React.useState([]);
+    const { isLoading, data, error } = useFetch(
+        'https://raw.githubusercontent.com/Frederic-Douville/FredericDouville_11_25012022/main/src/data/lodgings.json'
+    );
 
-    useEffect(() => {
-        fetch(
-            'https://raw.githubusercontent.com/Frederic-Douville/FredericDouville_11_25012022/main/src/data/lodgings.json'
-        ).then((response) =>
-            response
-                .json()
-                .then((data) => setLodgingData(data))
-                .catch((error) => console.log(error))
+    if (error) {
+        return (
+            <div className="error-ctn">
+                <span className="error-msg">Oups !! Il y a eu une erreur.</span>
+            </div>
         );
-    }, []);
+    }
 
     return (
         <div className="home-ctn">
             <Banner isHome />
-            <div className="home-card-ctn">
-                {lodgingData.map((item) => (
-                    <Card
-                        key={item.id}
-                        title={item.title}
-                        id={item.id}
-                        cover={item.cover}
-                    />
-                ))}
-            </div>
+            {isLoading ? (
+                <div className="lds-ellipsis">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            ) : (
+                <div className="home-card-ctn">
+                    {data?.map((item) => (
+                        <Card
+                            key={item.id}
+                            title={item.title}
+                            id={item.id}
+                            cover={item.cover}
+                        />
+                    ))}
+                </div>
+            )}
         </div>
     );
 }

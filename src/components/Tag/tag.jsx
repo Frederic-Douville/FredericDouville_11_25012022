@@ -1,11 +1,7 @@
 import '../../utils/Style/tag.css';
 
-function Tag({ content, key }) {
-    return (
-        <div className="tag-ctn" key={key}>
-            {content}
-        </div>
-    );
+function Tag({ content }) {
+    return <div className="tag-ctn">{content}</div>;
 }
 
 export default Tag;

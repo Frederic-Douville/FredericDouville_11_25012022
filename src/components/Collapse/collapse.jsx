@@ -4,7 +4,7 @@ import ChevronUp from '../../assets/Chevron_haut.svg';
 import '../../utils/Style/collapse.css';
 
 function Collapse({ content, title, isList, isLodging }) {
-    const [isOpen, setIsOpen] = React.useState(false);
+    const [isOpen, setIsOpen] = React.useState(true);
     const handleIsOpen = () => setIsOpen(!isOpen);
     return (
         <div
@@ -17,11 +17,10 @@ function Collapse({ content, title, isList, isLodging }) {
                     {isList ? 'Équipements' : title}
                 </span>
                 <button onClick={handleIsOpen}>
-                    {isOpen ? (
-                        <img src={ChevronUp} alt="chevron haut" />
-                    ) : (
-                        <img src={ChevronDown} alt="chevron bas" />
-                    )}
+                    <img
+                        src={isOpen ? ChevronUp : ChevronDown}
+                        alt={isOpen ? 'chevron haut' : 'chevron bas'}
+                    />
                 </button>
             </div>
             <div
@@ -31,8 +30,8 @@ function Collapse({ content, title, isList, isLodging }) {
             >
                 {isList ? (
                     <ul className="collapse-list">
-                        {React.Children.toArray(content).map((item) => (
-                            <li key={item.id}>{item}</li>
+                        {content?.map((item, index) => (
+                            <li key={index}>{item}</li>
                         ))}
                     </ul>
                 ) : (

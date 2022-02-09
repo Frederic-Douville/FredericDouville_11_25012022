@@ -6,7 +6,10 @@ function Header() {
     const location = useLocation().pathname;
     return (
         <nav>
-            <img src={Logo} alt="logo_kaza" className="logo-header" />
+            <Link to="/">
+                <img src={Logo} alt="logo_kaza" className="logo-header" />
+            </Link>
+
             <div>
                 <Link
                     to="/"

@@ -1,6 +1,12 @@
-.lodging-ctn {
+.lodging {
     margin: 0 0 1em 0;
     width: 70%;
+    display: flex;
+    justify-content: center;
+}
+
+.lodging-ctn {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -74,7 +80,7 @@
 }
 
 @media screen and (max-width: 991px) {
-    .lodging-ctn {
+    .lodging {
         width: 90%;
     }
 }
