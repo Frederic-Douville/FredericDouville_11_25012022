@@ -6,20 +6,23 @@ export function useFetch(url, id) {
     const [error, setError] = useState(false);
 
     useEffect(() => {
-        if (!url) return setLoading(true);
+        if (!url) return setError(true);
         async function fetchData() {
             try {
+                setLoading(true);
                 const response = await fetch(url);
                 const data = await response.json();
-                setData(data);
-                if (id) {
-                    data.map((item) => (item.id === id ? setData(item) : null));
-                }
-            } catch (error) {
-                console.log(error);
-                setError(true);
-            } finally {
+                !id
+                    ? setData(data)
+                    : setData(() =>
+                          data.map((item) =>
+                              item.id === id ? setData(item) : null
+                          )
+                      );
                 setLoading(false);
+            } catch (error) {
+                setError(true);
+                throw new Error('Erreur lors du call API');
             }
         }
         fetchData();

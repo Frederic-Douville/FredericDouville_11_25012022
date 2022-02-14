@@ -9,12 +9,8 @@ function Carousel({ array }) {
     const nextPicture = () => setIndexArray(indexArray + 1);
 
     useEffect(() => {
-        if (indexArray < 0) {
-            setIndexArray(array?.length - 1);
-        }
-        if (indexArray > array?.length - 1) {
-            setIndexArray(0);
-        }
+        if (indexArray < 0) setIndexArray(array?.length - 1);
+        if (indexArray > array?.length - 1) setIndexArray(0);
     }, [indexArray, array?.length]);
 
     return (

@@ -1,4 +1,4 @@
-import { useFetch } from '../../utils/Hook';
+import { useFetch } from '../../utils/hook/useFetch';
 import { useParams } from 'react-router-dom';
 import { Collapse, Carousel, Tag, Notation } from '../../components';
 import '../../utils/Style/lodging.css';
@@ -12,7 +12,7 @@ function Lodging() {
         id
     );
 
-    if (error) {
+    if (error && !isLoading) {
         return (
             <div className="error-ctn">
                 <span className="error-msg">Oups !! Il y a eu une erreur.</span>
