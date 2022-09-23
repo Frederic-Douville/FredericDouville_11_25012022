@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/Kasa/static/css/main.bca06244.css",
+    "main.js": "/Kasa/static/js/main.2c50b92c.js",
+    "static/media/Img_banner_about.png": "/Kasa/static/media/Img_banner_about.61b31de7d79e583e3f8e.png",
+    "static/media/Img_banner_home.png": "/Kasa/static/media/Img_banner_home.09c46313bbc5bf7b433a.png",
+    "static/media/Montserrat-Bold.ttf": "/Kasa/static/media/Montserrat-Bold.63fae500fdcf19ce83d4.ttf",
+    "static/media/Montserrat-Regular.ttf": "/Kasa/static/media/Montserrat-Regular.ac98a5f5ca71180fe293.ttf",
+    "static/media/Img_banner_about_mobile.png": "/Kasa/static/media/Img_banner_about_mobile.0c2c186e9f84a6f8877c.png",
+    "static/media/Logo_header.svg": "/Kasa/static/media/Logo_header.a6101328193bb3191cbcb50c120ec0d1.svg",
+    "static/media/Logo_footer.svg": "/Kasa/static/media/Logo_footer.ee689fd9409d1b5a898b4247819d8a00.svg",
+    "index.html": "/Kasa/index.html",
+    "static/media/Chevron_bas.svg": "/Kasa/static/media/Chevron_bas.f2cfcc76f4ae2f55ee699fe243dba350.svg",
+    "static/media/Chevron_haut.svg": "/Kasa/static/media/Chevron_haut.b493ffa8d213273ee575457aae023b70.svg",
+    "static/media/Chevron_droit.svg": "/Kasa/static/media/Chevron_droit.88153a5d119c2744ffe34dca1ef843df.svg",
+    "static/media/Chevron_gauche.svg": "/Kasa/static/media/Chevron_gauche.19918a1634b1441a25ae0b50e6b1f85b.svg",
+    "static/media/Star_empty.svg": "/Kasa/static/media/Star_empty.7e4ba6032d7d80ecc30aa389973cef95.svg",
+    "static/media/Star_full.svg": "/Kasa/static/media/Star_full.6430150c126a3adf92c132c52c9c7428.svg",
+    "main.bca06244.css.map": "/Kasa/static/css/main.bca06244.css.map",
+    "main.2c50b92c.js.map": "/Kasa/static/js/main.2c50b92c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bca06244.css",
+    "static/js/main.2c50b92c.js"
+  ]
+}
