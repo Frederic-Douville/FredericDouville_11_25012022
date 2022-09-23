@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { Error, Footer, Header } from './components';
 import { About, Home, Lodging } from './pages';
 import './utils/Style/index.css';
